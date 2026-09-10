@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tokenearly"
+version = "0.1.0"
+description = "Read new crypto exchange token listings from the public Tokenearly feed. No account, no API key."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+authors = [{ name = "Tokenearly" }]
+keywords = [
+  "crypto",
+  "cryptocurrency",
+  "exchange",
+  "listing",
+  "listings",
+  "new-listing",
+  "announcements",
+  "alerts",
+  "binance",
+  "upbit",
+  "bithumb",
+  "okx",
+  "bybit",
+  "trading",
+  "cli",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Topic :: Office/Business :: Financial",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Utilities",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://tokenearly.com"
+Documentation = "https://github.com/tokenearly/tokenearly-python#readme"
+Source = "https://github.com/tokenearly/tokenearly-python"
+Issues = "https://github.com/tokenearly/tokenearly-python/issues"
+"Listing timeline" = "https://tokenearly.com/listings"
+"Public feed" = "https://tokenearly.com/api/public/listings.json"
+
+[project.scripts]
+tokenearly = "tokenearly.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tokenearly"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/tokenearly", "README.md", "LICENSE", "tests"]
