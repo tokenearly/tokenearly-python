@@ -8,11 +8,11 @@ Read new crypto exchange token listings from the command line or from Python. **
 
 ```console
 $ pip install tokenearly
-$ tokenearly listings --exchange binance --type spot
-published (utc)   exchange  type  symbols  headline
-----------------  --------  ----  -------  -------------------------------------------
-2026-09-10 08:12  Binance   spot  ARB      Binance Will List Arbitrum (ARB)
-2026-09-09 14:03  Binance   spot  PENGU    Binance Will List Pudgy Penguins (PENGU)
+$ tokenearly listings --exchange binance --type spot --days 30
+published (utc)   exchange  type  symbols   headline
+----------------  --------  ----  --------  -----------------------------------------------------------
+2026-09-09 11:30  Binance   spot            Binance Will List 牛来 (牛来) with Seed Tag Applied
+2026-09-04 10:15  Binance   spot  MARSCOIN  Binance Will List MarsCoin (MARSCOIN) with Seed Tag Applied
 
 2 listing(s).
 ```
@@ -42,17 +42,24 @@ Binance, OKX, Bybit, Bitget, MEXC, Gate.io, HTX, KuCoin, Upbit and Bithumb. `tok
 
 ```console
 $ tokenearly exchanges
-id       name      collection  30d  spot  futures
--------  --------  ----------  ---  ----  -------
-mexc     MEXC      polling     163  81    82
-gate     Gate.io   websocket   58   22    36
-bitget   Bitget    polling     51   16    35
-...
-10 exchanges, 467 listings in the last 30 days.
+id       name     collection  30d  spot  futures
+-------  -------  ----------  ---  ----  -------
+mexc     MEXC     polling     129  73    56
+gate     Gate.io  websocket   44   19    25
+okx      OKX      polling     32   2     30
+huobi    Huobi    polling     28   13    15
+kucoin   KuCoin   polling     27   20    7
+bitget   Bitget   polling     18   10    8
+bybit    Bybit    polling     13   5     8
+upbit    Upbit    polling     11   11    0
+bithumb  Bithumb  polling     7    7     0
+binance  Binance  websocket   5    2     3
+
+10 exchanges, 314 listings in the last 30 days.
 Announcements arrive over the exchange's own WebSocket stream for: gate, binance
 ```
 
-Tokenized stocks, equity CFDs and listing-commemoration giveaways are excluded, because none of them is a crypto token listing.
+These are excluded, because none of them is a new crypto token: tokenized stocks and stock perpetuals, commodity and index contracts, pre-IPO contracts, new features for tokens that are already listed (earn, loans, margin, grid and copy trading), migrations and board moves, and promotional events.
 
 The `collection` column matters if latency does. Binance and Gate.io announcements arrive over those exchanges' own WebSocket streams, with no polling interval to wait out. The other eight are polled at high frequency.
 
