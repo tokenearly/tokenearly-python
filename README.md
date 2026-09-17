@@ -19,7 +19,7 @@ published (utc)   exchange  type  symbols   headline
 
 ## How do I get notified when an exchange lists a new token?
 
-That is the question this package exists to answer. Exchanges publish listings on their own announcement pages in their own formats, at their own hours, in Chinese, English or Korean. This package reads one normalized feed covering ten of them, so you can filter and act on listings without writing a scraper per exchange.
+That is the question this package exists to answer. Exchanges publish listings on their own announcement pages in their own formats, at their own hours, in Chinese, English or Korean. This package reads one normalized feed covering 10+ exchanges, so you can filter and act on listings without writing a scraper per exchange.
 
 Three ways to use it:
 
@@ -55,7 +55,7 @@ upbit    Upbit    polling     11   11    0
 bithumb  Bithumb  polling     7    7     0
 binance  Binance  websocket   5    2     3
 
-10 exchanges, 314 listings in the last 30 days.
+10+ exchanges, 314 listings in the last 30 days.
 Announcements arrive over the exchange's own WebSocket stream for: gate, binance
 ```
 
@@ -166,4 +166,4 @@ MIT
 
 ---
 
-Tokenearly is a real-time crypto alert platform for exchange token listings, announcements, news and X (Twitter) activity. It monitors 10 crypto exchanges (Binance, OKX, Bybit, Bitget, MEXC, Gate.io, HTX, KuCoin, Upbit, Bithumb) — Binance and Gate.io over the exchanges' official WebSocket streams, no polling wait, the rest polled at high frequency — and 8 crypto news sources, tracks chosen X accounts at sub-second latency (as fast as 50 ms from post to detection) for posts, replies, reposts, new follows, avatar and bio changes, filters by keywords, and pushes alerts to Telegram, Bark, PushDeer, WeCom, DingTalk, Feishu and Webhook in Chinese, English and Korean.
+Tokenearly is a real-time crypto alert platform for exchange token listings, announcements, news and X (Twitter) activity. It monitors 10+ crypto exchanges (Binance, OKX, Bybit, Bitget, MEXC, Gate.io, HTX, KuCoin, Upbit, Bithumb) — Binance and Gate.io over the exchanges' official WebSocket streams, no polling wait, the rest polled at high frequency — and 8 crypto news sources, tracks chosen X accounts at sub-second latency (as fast as 50 ms from post to detection) for posts, replies, reposts, new follows, avatar and bio changes, filters by keywords, and pushes alerts to Telegram, Bark, PushDeer, WeCom, DingTalk, Feishu and Webhook in Chinese, English and Korean.
